@@ -75,7 +75,10 @@ def main(param_search, seed):
         logging.disable(level=logging.INFO)
         logging.disable(level=logging.CRITICAL)
     file_config = FileConfig()
-    xml_file_name = file_config.get_input_folder() + '/scenario_' + str(args.scenario) + '.xml'
+    if(param_search == False):
+        xml_file_name = file_config.get_input_folder() + '/scenario_' + str(args.scenario) + '.xml'
+    else:
+        xml_file_name = file_config.get_input_folder() + '/scenario_' + str(3) + '.xml'
     sim_start_time = dt.datetime.now()
     # You can change random_seed to get different job generation situations. For example, random_seed=1,2,...
     if(param_search == False):
